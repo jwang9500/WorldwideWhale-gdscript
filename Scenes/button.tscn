@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg24lpbxeufml"]
+
+[ext_resource type="Script" uid="uid://b2wi3hw80esmi" path="res://Scripts/button.gd" id="1_1cmwl"]
+[ext_resource type="Texture2D" uid="uid://cn0o6tuskhiqt" path="res://Art/button_unpressed.png" id="2_smycg"]
+[ext_resource type="Texture2D" uid="uid://cx2xm15710vf6" path="res://Art/button_pressed.png" id="3_iju5o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smycg"]
+radius = 17.0
+height = 62.0
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_1cmwl")
+unpressed_texture = ExtResource("2_smycg")
+pressed_texture = ExtResource("3_iju5o")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -5)
+texture = ExtResource("2_smycg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_smycg")
